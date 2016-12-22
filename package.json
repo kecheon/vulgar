@@ -22,56 +22,41 @@
     "webpack-dev-server": "webpack-dev-server",
     "webdriver-manager": "webdriver-manager",
     "protractor": "protractor",
-
     "clean": "npm cache clean && npm run rimraf -- node_modules doc typings coverage dist",
-      "clean:dist": "npm run rimraf -- dist",
-        "preclean:install": "npm run clean",
-      "clean:install": "npm set progress=false && npm install",
-        "preclean:start": "npm run clean",
-      "clean:start": "npm start",
-
+    "clean:dist": "npm run rimraf -- dist",
+    "preclean:install": "npm run clean",
+    "clean:install": "npm set progress=false && npm install",
+    "preclean:start": "npm run clean",
+    "clean:start": "npm start",
     "watch": "npm run watch:dev",
-      "watch:dev": "npm run build:dev -- --watch",
-        "watch:dev:hmr": "npm run watch:dev -- --hot",
-      "watch:test": "npm run test -- --auto-watch --no-single-run",
-      "watch:prod": "npm run build:prod -- --watch",
-
+    "watch:dev": "npm run build:dev -- --watch",
+    "watch:dev:hmr": "npm run watch:dev -- --hot",
+    "watch:test": "npm run test -- --auto-watch --no-single-run",
+    "watch:prod": "npm run build:prod -- --watch",
     "build": "npm run build:dev",
-        "prebuild:dev": "npm run clean:dist",
-      "build:dev": "webpack --config config/webpack.dev.js --progress --profile --colors --display-error-details --display-cached",
-        "prebuild:prod": "npm run clean:dist",
-      "build:prod": "webpack --config config/webpack.prod.config.js --progress --profile --colors --display-error-details --display-cached --bail",
-
+    "prebuild:dev": "npm run clean:dist",
+    "build:dev": "webpack --config config/webpack.dev.js --progress --profile --colors --display-error-details --display-cached",
+    "prebuild:prod": "npm run clean:dist",
+    "build:prod": "webpack --config config/webpack.prod.config.js --progress --profile --colors --display-error-details --display-cached --bail",
     "server": "npm run server:dev",
-      "server:dev": "webpack-dev-server --inline --progress --profile --colors --watch --display-error-details --display-cached  --content-base src/",
-      "server:dev:hmr": "npm run server:dev -- --hot",
-      "server:prod": "./node_modules/.bin/http-server dist --cors",
-
+    "server:dev": "webpack-dev-server --inline --progress --profile --colors --watch --display-error-details --display-cached  --content-base src/",
+    "server:dev:hmr": "npm run server:dev -- --hot",
+    "server:prod": "./node_modules/.bin/http-server dist --cors",
     "webdriver:update": "npm run webdriver-manager update",
     "webdriver:start": "npm run webdriver-manager start",
-
     "fix:line-endings": "find . \\( -type f -and -not -path '*/node_modules/*' \\) -exec dos2unix {} \\;",
-
     "lint": "npm run tslint src/**/*.ts",
-
-      "pree2e": "npm run webdriver:update -- --standalone",
+    "pree2e": "npm run webdriver:update -- --standalone",
     "e2e": "npm run protractor",
-      "e2e:live": "npm run e2e -- --elementExplorer",
-
-      "pretest": "npm run lint",
+    "e2e:live": "npm run e2e -- --elementExplorer",
     "test": "node --max-old-space-size=4096 node_modules/karma/bin/karma start",
-
     "ci": "npm run test && npm run e2e",
-
     "docs": "npm run typedoc --options typedoc.json --exclude '**/*.spec.ts' ./src/",
-
     "start": "concurrently --kill-others --raw \"npm run server:dev\" \"npm run watch\"",
-
     "postinstall": "npm run typings -- install",
-
-      "preversion": "npm test",
+    "preversion": "npm test",
     "version": "npm run build",
-      "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags"
   },
   "dependencies": {
     "@angular2-material/button": "2.0.0-alpha.5",
@@ -159,6 +144,7 @@
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "1.7.0",
+    "lint": "^1.1.2",
     "mocha": "^2.5.3",
     "morgan": "^1.7.0",
     "node-sass": "^3.4.2",
@@ -183,7 +169,8 @@
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1",
     "webpack-md5-hash": "^0.0.5",
-    "webpack-merge": "^0.13.0"
+    "webpack-merge": "^0.13.0",
+    "zone.js": "^0.6.13"
   },
   "repository": {
     "type": "git",

@@ -32,7 +32,7 @@ require('zone.js/dist/sync-test');
 require('rxjs/Rx');
 
 var testing = require('@angular/core/testing');
-var browser = require('@angular/platform/testing/browser');
+var browser = require('@angular/platform-browser-dynamic/testing/browser');
 
 testing.setBaseTestProviders(
   browser.TEST_BROWSER_DYNAMIC_PLATFORM_PROVIDERS,

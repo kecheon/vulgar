@@ -4,7 +4,6 @@ import {
   injectAsync,
   describe,
   beforeEachProviders,
-  TestComponentBuilder
 } from '@angular/core/testing';
 
 import {TestComponentBuilder} from '@angular/compiler/testing';

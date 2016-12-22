@@ -4,9 +4,9 @@ import {
   async,
   describe,
   beforeEachProviders,
-  TestComponentBuilder
 } from '@angular/core/testing';
 
+import {TestComponentBuilder} from '@angular/compiler/testing';
 import {Component, provide} from '@angular/core';
 import {BaseRequestOptions, Http} from '@angular/http';
 import {MockBackend} from '@angular/http/testing';
@@ -22,7 +22,7 @@ describe('x-large directive', () => {
   })
   class TestComponent {}
 
-  it('should sent font-size to x-large', async(Inject([TestComponentBuilder], (tcb) => {
+  it('should sent font-size to x-large', async(inject([TestComponentBuilder], (tcb) => {
     return tcb.overrideTemplate(TestComponent, '<div x-large>Content</div>')
       .createAsync(TestComponent).then((fixture: any) => {
         fixture.detectChanges();

@@ -3,7 +3,6 @@ import {
   inject,
   injectAsync,
   beforeEachProviders,
-  TestComponentBuilder
 } from '@angular/core/testing';
 
 import {Component, provide} from '@angular/core';
